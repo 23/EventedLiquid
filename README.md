@@ -6,7 +6,8 @@ Generally,  the library implements three feature on top of existing Liquid funct
 * A light library to define and listen to events: `.fire(event, [context])` to trigger and event and `.on(event, callback)` to listen to events.
 * A global `context` hash (JavaScript object) mixing in properties to keep the state of display current.
 
-Generally, this could be a Liquid template:
+
+#### A Liquid template
 
     <h3>What on?</h3>
     {% event 'play', 'pause' %}
@@ -17,3 +18,13 @@ Generally, this could be a Liquid template:
       {% endif %}
     {% endevent %}
 
+#### Some JavaScript code to go with it
+
+    var el = new EventedLiquid(template, {playing:false, buffering:false, playlist:true});
+    el.on('play', function(ev,context){
+        ...
+      });
+    el.on('pause', function(ev,context){
+        ...
+      });
+    el.play({playing:true});
