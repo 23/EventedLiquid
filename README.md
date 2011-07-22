@@ -2,8 +2,8 @@
 
 Generally,  the library implements three feature on top of existing Liquid functionality:
 
-* `{% event 'play', 'pause' %} ... {% endevent ‰}` to denote part of the template in need of re-rendering whenever `play` or `pause` events occur.
-* A light library to define and listen to events: `.fire(event, [context])` to trigger and event and `.on(event, callback)` to listen to events.
+* `{% event 'play', 'pause' %} ... {% endevent ‰}` to denote part of the template in need of re-rendering whenever custom events such as `play` or `pause` occur.
+* A light library to define and listen to such customer events: `.fire(event, [context])` to trigger and event and `.on(event, callback)` to listen to events.
 * A global `context` hash (JavaScript object) mixing in properties to keep the state of display current.
 
 
